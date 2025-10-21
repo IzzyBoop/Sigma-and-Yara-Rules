@@ -1,0 +1,17 @@
+title: Suspicious curl using Fake UserAgent String
+id: b8d0b4d2-6f72-4c91-b92d-05d2e4b276f1
+description: Detects use of curl using a specific fake user agent string on MacOS
+status: experimental
+author: Izzy
+date: 2025/10/21
+logsource:
+  product: macos
+  category: process_creation
+detection:
+  selection_curl:
+    - Image|endswith: '/curl'
+    - CommandLine|contains: 'curl'
+  selection_pipe_useragent:
+    CommandLine|contains: 'Mac OS X 10_15_7'
+  condition: selection_curl and selection_pipe_useragent
+level: high
