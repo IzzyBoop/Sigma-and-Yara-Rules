@@ -9,9 +9,9 @@ logsource:
   category: process_creation
 detection:
   selection_curl:
-    - Image|endswith: '/curl'
+    - Image|endswith: 'curl'
     - CommandLine|contains: 'curl'
   selection_pipe_useragent:
-    CommandLine|contains: 'Mac OS X 10_15_7'
+    CommandLine|contains: '-A Mac OS X'
   condition: selection_curl and selection_pipe_useragent
 level: high
