@@ -1,4 +1,4 @@
-title: Suspicious curl Piped to osascript on macOS
+title: MacSync - Suspicious curl Piped to osascript on macOS
 id: 4f6b2f77-0a2a-4b7b-9330-8b5d1ad8bdb7
 description: Detects use of curl piped into osascript, which may indicate command execution or payload delivery on macOS.
 status: experimental
@@ -8,10 +8,9 @@ logsource:
   product: macos
   category: process_creation
 detection:
-  selection_curl:
-    - Image|endswith: '/curl'
-    - CommandLine|contains: 'curl'
-  selection_pipe_osascript:
-    CommandLine|contains: '| osascript'
-  condition: selection_curl and selection_pipe_osascript
+  selection:
+    CommandLine|contains|all: 
+      - 'sh -c curl'
+      - 'osascript'
+  condition: selection
 level: high
