@@ -2,7 +2,7 @@ title: MacSync - Suspicious curl Usage Masquerading as Windows on macOS
 id: 7a1e5c3b-1c4b-4f82-b8ef-bfa6e11b54a2
 description: Detects curl commands on macOS that use fake Windows user-agents or headers, indicating possible data exfiltration or evasion attempts.
 status: experimental
-author: Izzy
+author: IzzyBoop
 date: 2025/10/21
 logsource:
   product: macos

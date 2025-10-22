@@ -2,7 +2,7 @@ title: MacSync - Suspicious curl using Fake UserAgent String
 id: b8d0b4d2-6f72-4c91-b92d-05d2e4b276f1
 description: Detects use of curl using a specific fake user agent string on MacOS
 status: experimental
-author: Izzy
+author: IzzyBoop
 date: 2025/10/21
 logsource:
   product: macos

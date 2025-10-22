@@ -2,7 +2,7 @@ title: Generic MacOS RMM Tool Detection
 description: Detects processes associated with common Remote Monitoring and Management (RMM) tools that could be used for lateral movement
 references: LOLRMM and the wide open internets
 status: experimental
-author: Izzy
+author: IzzyBoop
 date: 2025/10/21
 logsource:
   category: process_creation
