@@ -1,0 +1,45 @@
+title: Generic MacOS RMM Tool Detection
+description: Detects processes associated with common Remote Monitoring and Management (RMM) tools that could be used for lateral movement
+references: LOLRMM and the wide open internets
+status: experimental
+author: Izzy
+date: 2025/10/21
+logsource:
+  category: process_creation
+  product: macos
+detection:
+  selection:
+    Image|endswith:
+    - 'NinjaRMM-Agent*.pkg'
+    - 'NinjaRMM-Agent*.dmg'
+    - 'jamfHelper.app'
+    - 'Jamf.app'
+    - 'JamfDaemon.app'
+    - 'JamfAgent.app'
+    - 'Jamf Pro Installer.pkg'
+    - 'Splashtop*.dmg'
+    - 'Pulseway.dmg'
+    - 'UEMS_MacAgent.pkg'
+    - 'serverinfo.plist'
+    - 'RemotePCSuite.dmg'
+    - 'RemotePCHost.dmg'
+    - 'RemotePCViewer.dmg'
+    - 'AlpemixPro.app'
+    - 'anydesk.dmg'
+    - 'aspia-client*.dmg'
+    - 'aspia-host*.dmg'
+    - 'aspia-console*.dmg'
+    - 'AteraAgentInstaller.pkg'
+    - 'MacAgentInstaller.pkg'
+    - 'Devolutions.RemoteDesktopManager.Mac*.dmg'
+    - 'HopToDesk.dmg'
+    - 'parsec-macos.pkg'
+    - 'rustdesk*.dmg'
+    - 'TeamViewer*.dmg'
+    - 'screenconnect*.dmg'
+    - 'connectwisecontrol*.dmg'
+    - 'AnyDesk.app'
+  condition: selection
+false_positives:
+- Legitimate usage of remote management tools
+level: medium
