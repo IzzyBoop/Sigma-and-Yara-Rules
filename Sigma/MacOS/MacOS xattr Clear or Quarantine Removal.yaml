@@ -1,0 +1,20 @@
+title: MacOS xattr Quarantine Removal or Attribute Clear
+status: experimental
+description: Detects the removal of the com.apple.quarantine extended attribute or clearing of other extended attributes on files, which may indicate attempts to bypass security measures.
+author: IzzyBoop
+date: 2025-10-27
+logsource:
+  product: macos
+  catrgory: process_creation
+detection:
+  selection_xattr_removal:
+    CommandLine|contains|all:
+      - 'xattr'
+      - '-d'
+      - 'com.apple.quarantine'
+  selection_xattr_clear:
+    CommandLine|contains|all:
+      - 'xattr'
+      - '-c'
+  condition: selection_xattr_removal or selection_xattr_clear
+level: medium
