@@ -12,9 +12,11 @@ detection:
       - 'xattr'
       - '-d'
       - 'com.apple.quarantine'
+      # Split to avoid cases where escape characters are used
   selection_xattr_clear:
     CommandLine|contains|all:
       - 'xattr'
       - '-c'
+      # Split to avoid cases where escape characters are used
   condition: selection_xattr_removal or selection_xattr_clear
 level: medium
