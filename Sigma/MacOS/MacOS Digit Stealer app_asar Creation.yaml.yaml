@@ -41,7 +41,7 @@ detection:
       - 'cd'
       - '/tmp'
       - '&&'
-      - 'unzip -o '
+      - 'unzip -o'
       - '/tmp/app.asar.zip'
   selection_7:
     CommandLine|contains|all:
