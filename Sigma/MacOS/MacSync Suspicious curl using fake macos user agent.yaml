@@ -7,13 +7,18 @@ date: 2025/10/21
 logsource:
   product: macos
   category: process_creation
+
 detection:
   selection_curl:
-    - Image|endswith: 'zsh'
-    - CommandLine|contains: 'curl'
+    Image|endswith: 'zsh'
+    CommandLine|contains: 'curl'
+
   selection_pipe_useragent:
     CommandLine|contains: '-A Mac OS X'
+
   selection_curl_fssl:
     CommandLine|contains: '-fsSL'
+
   condition: selection_curl and selection_pipe_useragent and selection_curl_fssl
+
 level: high

@@ -9,15 +9,15 @@ logsource:
   product: macos
 detection:
   selection:
-    Image|endswith:
-    - 'NinjaRMM-Agent*.pkg'
-    - 'NinjaRMM-Agent*.dmg'
+    Image|endswith|any:
+    - 'NinjaRMM-Agent'
+    - 'NinjaRMM-Agent'
     - 'jamfHelper.app'
     - 'Jamf.app'
     - 'JamfDaemon.app'
     - 'JamfAgent.app'
     - 'Jamf Pro Installer.pkg'
-    - 'Splashtop*.dmg'
+    - 'Splashtop'
     - 'Pulseway.dmg'
     - 'UEMS_MacAgent.pkg'
     - 'serverinfo.plist'
@@ -26,18 +26,18 @@ detection:
     - 'RemotePCViewer.dmg'
     - 'AlpemixPro.app'
     - 'anydesk.dmg'
-    - 'aspia-client*.dmg'
-    - 'aspia-host*.dmg'
-    - 'aspia-console*.dmg'
+    - 'aspia-client'
+    - 'aspia-host'
+    - 'aspia-console'
     - 'AteraAgentInstaller.pkg'
     - 'MacAgentInstaller.pkg'
-    - 'Devolutions.RemoteDesktopManager.Mac*.dmg'
+    - 'Devolutions.RemoteDesktopManager.Mac'
     - 'HopToDesk.dmg'
     - 'parsec-macos.pkg'
-    - 'rustdesk*.dmg'
-    - 'TeamViewer*.dmg'
-    - 'screenconnect*.dmg'
-    - 'connectwisecontrol*.dmg'
+    - 'rustdesk'
+    - 'TeamViewer'
+    - 'screenconnect'
+    - 'connectwisecontrol'
     - 'AnyDesk.app'
   condition: selection
 false_positives:

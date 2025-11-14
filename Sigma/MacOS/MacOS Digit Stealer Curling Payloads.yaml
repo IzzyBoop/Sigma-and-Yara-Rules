@@ -7,16 +7,17 @@ logsource:
   product: macos
   category: process_creation
 detection:
-  selection:
+  selection_1:
     CommandLine|contains|all:
       - 'nohup'
       - 'curl'
       - '-fsSL'
       - '>/dev/null'
       - '2>&1'
-    CommandLine|contains:
+  selection_2:
+    CommandLine|contains|any:
       - '| osascript'
       - '| osascript -l JavaScript'
       - '| bash'
-  condition: selection
+  condition: selection_1 and selection_2
 

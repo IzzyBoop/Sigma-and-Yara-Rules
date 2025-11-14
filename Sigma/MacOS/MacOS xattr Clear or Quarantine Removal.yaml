@@ -5,7 +5,7 @@ author: IzzyBoop
 date: 2025-10-27
 logsource:
   product: macos
-  catrgory: process_creation
+  category: process_creation
 detection:
   selection_xattr_removal:
     CommandLine|contains|all:
