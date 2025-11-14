@@ -1,5 +1,5 @@
-title: MacOS Digit Stealer - Dropper Detection
-description: Detects 'Drag Into Terminal.msi' bash dropper.
+title: MacOS Digit Stealer Curling Further Payloads
+description: Detects Digit Dropper Curling Second Stage Payloads
 status: experimental
 author: IzzyBoop
 date: 2025/11/14
