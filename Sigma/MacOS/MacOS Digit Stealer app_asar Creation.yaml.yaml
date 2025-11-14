@@ -20,7 +20,7 @@ detection:
       - 'rm -f'
       - '/tmp/app.asar.zip'
   selection_4:
-    CommandLine|contains|all:
+    - CommandLine|contains|all:
       - 'curl'
       - '--max-time'
       - '--retry'
@@ -28,14 +28,14 @@ detection:
       - '--retry-max-time'
       - '-f -C - -o'
       - '/tmp/downloaded_parts/'
-    CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+    - CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
   selection_5:
-    CommandLine|contains|all:
+    - CommandLine|contains|all:
       - 'cat'
       - '/tmp/downloaded_parts/'
       - '>>'
       - '/tmp/app.asar.zip'
-    CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+    - CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
   selection_6:
     CommandLine|contains|all:
       - 'cd'
