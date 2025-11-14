@@ -6,21 +6,25 @@ date: 2025/11/14
 logsource:
   product: macos
   category: process_creation
+
 detection:
   selection_1:
     CommandLine|contains|all:
       - 'osascript -e'
       - 'set volume with output muted'
+
   selection_2:
     CommandLine|contains|all:
       - 'mkdir -p'
       - '/tmp/downloaded_parts'
+
   selection_3:
     CommandLine|contains|all:
       - 'rm -f'
       - '/tmp/app.asar.zip'
+
   selection_4:
-    - CommandLine|contains|all:
+    CommandLine|contains|all:
       - 'curl'
       - '--max-time'
       - '--retry'
@@ -28,14 +32,20 @@ detection:
       - '--retry-max-time'
       - '-f -C - -o'
       - '/tmp/downloaded_parts/'
-    - CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+
+  selection_4_regex:
+    CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+
   selection_5:
-    - CommandLine|contains|all:
+    CommandLine|contains|all:
       - 'cat'
       - '/tmp/downloaded_parts/'
       - '>>'
       - '/tmp/app.asar.zip'
-    - CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+
+  selection_5_regex:
+    CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+
   selection_6:
     CommandLine|contains|all:
       - 'cd'
@@ -43,13 +53,16 @@ detection:
       - '&&'
       - 'unzip -o'
       - '/tmp/app.asar.zip'
+
   selection_7:
     CommandLine|contains|all:
       - 'killall'
       - 'Ledger Live'
       - '|| true'
+
   selection_8:
     CommandLine|contains|all:
       - 'rm -rf'
       - '/tmp/downloaded_parts/'
+
   condition: 1 of selection_*
