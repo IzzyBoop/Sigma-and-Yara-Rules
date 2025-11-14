@@ -1,0 +1,15 @@
+title: MacOS Digit Stealer - Dropper Detection
+description: Detects 'Drag Into Terminal.msi' bash dropper.
+status: experimental
+author: IzzyBoop
+date: 2025/11/14
+logsource:
+  product: macos
+  category: process_creation
+detection:
+  selection:
+    CommandLine|contains|all:
+      - '| base64 -d | gunzip | bash'
+      - 'echo'
+    CommandLine|re: '([A-Za-z0-9+/]{20,}={0,2})'
+  condition: selection
