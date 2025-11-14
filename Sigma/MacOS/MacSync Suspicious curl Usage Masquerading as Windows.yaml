@@ -14,7 +14,7 @@ detection:
       - 'Windows'
       - 'Mozilla'
   selection_2:
-    CommandLine|contains|any:
+    CommandLine|contains:
      - '-A'
      - 'User-Agent'
      - 'user-agent'

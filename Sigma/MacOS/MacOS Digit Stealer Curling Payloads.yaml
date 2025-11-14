@@ -15,7 +15,7 @@ detection:
       - '>/dev/null'
       - '2>&1'
   selection_2:
-    CommandLine|contains|any:
+    CommandLine|contains:
       - '| osascript'
       - '| osascript -l JavaScript'
       - '| bash'
