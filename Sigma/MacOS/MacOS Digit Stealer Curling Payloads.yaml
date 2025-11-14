@@ -1,5 +1,6 @@
 title: MacOS Digit Stealer Curling Further Payloads
 description: Detects Digit Stealer Curling Second Stage Payloads
+id: 0b9e1c49-ba9d-486a-a27e-1ce2363fb8fd
 status: experimental
 author: IzzyBoop
 date: 2025/11/14

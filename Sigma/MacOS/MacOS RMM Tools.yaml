@@ -1,5 +1,6 @@
 title: Generic MacOS RMM Tool Detection
 description: Detects processes associated with common Remote Monitoring and Management (RMM) tools that could be used for lateral movement
+id: 4384eb71-f22d-49a4-bc75-a48b0cc7f204
 references: LOLRMM and the wide open internets
 status: experimental
 author: IzzyBoop
@@ -10,7 +11,6 @@ logsource:
 detection:
   selection:
     Image|endswith:
-    - 'NinjaRMM-Agent'
     - 'NinjaRMM-Agent'
     - 'jamfHelper.app'
     - 'Jamf.app'
@@ -41,5 +41,5 @@ detection:
     - 'AnyDesk.app'
   condition: selection
 false_positives:
-- Legitimate usage of remote management tools
+  - Legitimate usage of remote management tools
 level: medium
