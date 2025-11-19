@@ -37,9 +37,8 @@ detection:
       - '--retry-max-time'
       - '-f -C - -o'
       - '/tmp/downloaded_parts/'
-
-  selection_4_regex:
-    CommandLine|re: '/tmp/downloaded_parts/part[1-3]\.aspx$'
+      - '.pages.dev'
+      - '.aspx'
 
   selection_5:
     CommandLine|contains|all:
