@@ -11,21 +11,25 @@ logsource:
 detection:
   selection_1:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'osascript -e'
       - 'set volume with output muted'
 
   selection_2:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'mkdir -p'
       - '/tmp/downloaded_parts'
 
   selection_3:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'rm -f'
       - '/tmp/app.asar.zip'
 
   selection_4:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'curl'
       - '--max-time'
       - '--retry'
@@ -39,6 +43,7 @@ detection:
 
   selection_5:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'cat'
       - '/tmp/downloaded_parts/'
       - '>>'
@@ -46,6 +51,7 @@ detection:
 
   selection_6:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'cd'
       - '/tmp'
       - '&&'
@@ -54,12 +60,14 @@ detection:
 
   selection_7:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'killall'
       - 'Ledger Live'
       - '|| true'
 
   selection_8:
     CommandLine|contains|all:
+      - 'sh -c'
       - 'rm -rf'
       - '/tmp/downloaded_parts/'
 
