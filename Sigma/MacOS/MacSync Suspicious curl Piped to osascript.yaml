@@ -9,7 +9,7 @@ logsource:
   category: process_creation
 detection:
   selection:
-    CommandLine|contains|all: 
+    CommandLine|contains|all:
       - 'sh -c curl'
       - 'osascript'
   condition: selection
