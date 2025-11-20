@@ -9,9 +9,8 @@ logsource:
   category: process_creation
 detection:
   selection_1:
-    ParentImage|endswith: '/bash'
+    ParentImage|endswith: '/nohup'
     CommandLine|contains|all:
-      - 'nohup'
       - 'curl'
       - '-fsSL'
   selection_2:

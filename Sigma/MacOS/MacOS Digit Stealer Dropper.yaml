@@ -13,8 +13,8 @@ detection:
     CommandLine|contains:
       - 'base64 -d'
       - 'gunzip'
-      - 'bash'
   selection_2:
+    ParentImage|endswith: '/bash'
     CommandLine|contains|all:
       - 'curl'
       - '-fsSL'
