@@ -3,7 +3,7 @@ description: Detects 'Drag Into Terminal.msi' bash dropper.
 id: fdfe1adc-244a-4d84-a219-86fbdb38307c
 status: experimental
 author: IzzyBoop
-date: 2025/11/14
+date: 2025/11/20
 logsource:
   product: macos
   category: process_creation

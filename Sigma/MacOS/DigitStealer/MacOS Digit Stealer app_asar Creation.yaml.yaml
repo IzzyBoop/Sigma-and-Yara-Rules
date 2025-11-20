@@ -3,7 +3,7 @@ description: Detects activity from the script that creates the app.asar Ledger L
 id: 960a5e05-2ce9-475d-a8e9-e4047d5dd1e3
 status: experimental
 author: IzzyBoop
-date: 2025/11/14
+date: 2025/11/20
 logsource:
   product: macos
   category: process_creation
