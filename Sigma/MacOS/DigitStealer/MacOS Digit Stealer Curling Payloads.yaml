@@ -18,6 +18,5 @@ detection:
     CommandLine|contains:
       - 'osascript'
       - 'osascript -l JavaScript'
-      - 'bash'
   condition: selection_1 or selection_2
 
