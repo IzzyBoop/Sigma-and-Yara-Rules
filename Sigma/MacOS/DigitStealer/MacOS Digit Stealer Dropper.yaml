@@ -10,9 +10,9 @@ logsource:
 detection:
   selection_1:
     ParentImage|endswith: '/bash'
-    CommandLine|contains:
-      - 'base64 -d'
-      - 'gunzip'
+    CommandLine|re: # Look for the commands with the same group id as these results. This captures "[command] | base64 -d | gunzip", etc.
+      - '^base64 -d$'
+      - '^gunzip$'
   selection_2:
     ParentImage|endswith: '/bash'
     CommandLine|contains|all:
