@@ -15,3 +15,8 @@ sigma convert -t lucene -p ./macos-esf.yaml [directory of transformed files, or 
 ```
 
 You need to do a `sigma plugin install elasticsearch` to have lucene as an option, you may also need to install missing packages like `pyYAML` using `pip install pyyaml` or `pip3 install pyyaml`. If you're in a virtual environment, `python3 -m pip install pyyaml`.
+
+You can get sigma with `brew install sigma-cli` or with your package manager of choice. 
+
+Make sure if you're running this through elasticsearch, you have your search set to `lucene` not `KQL`.
+
