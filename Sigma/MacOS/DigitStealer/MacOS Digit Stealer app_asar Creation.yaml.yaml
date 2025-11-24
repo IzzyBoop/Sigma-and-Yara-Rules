@@ -10,28 +10,28 @@ logsource:
 
 detection:
   selection_1:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'osascript -e'
       - 'set volume with output muted'
 
   selection_2:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'mkdir -p'
       - '/tmp/downloaded_parts'
 
   selection_3:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'rm -f'
       - '/tmp/app.asar.zip'
 
   selection_4:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'curl'
@@ -42,7 +42,7 @@ detection:
       - '-f -C - -o'
 
   selection_5:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'cat'
@@ -51,7 +51,7 @@ detection:
       - '/tmp/app.asar.zip'
 
   selection_6:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'cd'
@@ -61,7 +61,7 @@ detection:
       - '/tmp/app.asar.zip'
 
   selection_7:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'killall'
@@ -69,7 +69,7 @@ detection:
       - '|| true'
 
   selection_8:
-    ParentImage|endswith: '/osascript'
+    ParentImage|endswith: 'osascript'
     CommandLine|contains|all:
       - 'sh -c'
       - 'rm -rf'

@@ -9,14 +9,14 @@ logsource:
   category: process_creation
 detection:
   selection_1:
-    ParentImage|endswith: 'nohup' # the initial nohup curl -fsSL command was seen in my testing to later spawn nohup as the parent and curl -fsSL as the child.
+    ParentImage|endswith: 'bash' 
     CommandLine|contains|all:
       - 'curl'
       - '-fsSL'
   selection_2:
     ParentImage|endswith: 'bash'
-    CommandLine|re: # Look for the commands with the same group id as these results. This captures "[command] | osascript", etc.
-      - '^osascript$'
-      - '^osascript -l JavaScript$'
+    CommandLine: # Look for the commands with the same group id as these results. This captures "[command] | osascript", etc.
+      - 'osascript'
+      - 'osascript -l Javascript'
   condition: selection_1 or selection_2
 

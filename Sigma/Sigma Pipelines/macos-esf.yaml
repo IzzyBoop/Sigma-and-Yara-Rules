@@ -1,0 +1,27 @@
+# macos-esf.yml
+pipelines:
+  - name: macos_esf
+    priority: 10
+    transformations:
+      # lowercase caseless fields
+      - type: lowercase
+        fields:
+          - process.command_line
+          - process.executable
+          - process.parent.executable
+          - file.path
+          - file.name
+          - user.name
+      # field mapping (no .keyword)
+      - type: fieldmapping
+        map:
+          CommandLine: process.command_line
+          Image: process.executable
+          Executable: process.executable
+          ParentImage: process.parent.executable
+          ProcessName: process.name
+          ParentProcessName: process.parent.name
+          FileName: file.name
+          FilePath: file.path
+          User: user.name
+          Hostname: host.hostname
