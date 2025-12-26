@@ -1,6 +1,6 @@
 # Read This First
 
-This work is being done by someone else much better than me. The work here was to simply get somethign janky working for my own purposes. Nebulock is working on this same thing but much more fleshed out. Check out the blog about [coreSigma](https://nebulock.io/blog/coresigma-expanding-sigma-detection-for-macos) first.
+This work is being done by someone else much better than me. The work here was to simply get something janky working for my own purposes. Nebulock is working on this same thing but much more fleshed out. Check out the blog about [coreSigma](https://nebulock.io/blog/coresigma-expanding-sigma-detection-for-macos) first.
 
 ## Caveat
 
