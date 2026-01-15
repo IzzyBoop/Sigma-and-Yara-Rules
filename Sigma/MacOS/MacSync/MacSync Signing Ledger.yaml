@@ -1,0 +1,14 @@
+title: applescript macsync copying cloudkeys
+description: Detects MacSync copying cloudkeys via AppleScript
+author: IzzyBoop
+date: 2025/01/15
+status: experimental
+logsource:
+    product: macos
+    service: process_creation
+detection:
+    selection:
+        CommandLine|contains:
+            - 'codesign'
+            - 'Ledger Wallet.app'
+    condition: selection
