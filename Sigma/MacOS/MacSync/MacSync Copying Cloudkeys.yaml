@@ -1,4 +1,5 @@
 title: applescript macsync copying cloudkeys
+id: 02eb6866-2389-4245-a129-22b9245e3032
 description: Detects MacSync copying cloudkeys via AppleScript
 author: IzzyBoop
 date: 2025/01/15

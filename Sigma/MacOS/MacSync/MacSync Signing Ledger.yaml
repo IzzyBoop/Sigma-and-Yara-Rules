@@ -1,4 +1,5 @@
 title: applescript malicious signing of Ledger Wallet app
+id: 02f70548-e6e6-4480-91dd-e54221b10da2
 description: Detects MacSync signing Ledger Wallet app via codesign
 author: IzzyBoop
 date: 2025/01/15
