@@ -1,5 +1,5 @@
-title: applescript macsync copying cloudkeys
-description: Detects MacSync copying cloudkeys via AppleScript
+title: applescript malicious signing of Ledger Wallet app
+description: Detects MacSync signing Ledger Wallet app via codesign
 author: IzzyBoop
 date: 2025/01/15
 status: experimental
